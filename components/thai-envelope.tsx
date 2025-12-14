@@ -56,7 +56,7 @@ export function ThaiEnvelope() {
           </div>
 
           {/* Blessing Card */}
-          <AnimatePresence>
+<AnimatePresence>
             {isOpen && (
               <motion.div
                 drag
@@ -93,24 +93,105 @@ export function ThaiEnvelope() {
                 className="absolute inset-x-8 top-12 z-20 cursor-grab active:cursor-grabbing"
                 onClick={(e) => e.stopPropagation()}
               >
-                <div className="bg-gradient-to-br from-[#FFFEF9] to-[#FFF9E6] rounded-lg shadow-2xl p-8 border border-[#E8D4A0]">
-                  {/* Decorative corner elements */}
-                  <div className="absolute top-3 left-3 w-6 h-6 border-t-2 border-l-2 border-[#D4AF37] opacity-60" />
-                  <div className="absolute top-3 right-3 w-6 h-6 border-t-2 border-r-2 border-[#D4AF37] opacity-60" />
-                  <div className="absolute bottom-3 left-3 w-6 h-6 border-b-2 border-l-2 border-[#D4AF37] opacity-60" />
-                  <div className="absolute bottom-3 right-3 w-6 h-6 border-b-2 border-r-2 border-[#D4AF37] opacity-60" />
+                <div className="relative bg-gradient-to-br from-pink-100 via-pink-50 to-white rounded-2xl shadow-2xl p-8 border-2 border-pink-200 overflow-hidden">
+                  {/* Polka dot side borders */}
+                  <div className="absolute left-0 top-0 bottom-0 w-6 bg-pink-300 opacity-40">
+                    <div className="absolute inset-0 flex flex-col justify-around items-center py-2">
+                      {[...Array(8)].map((_, i) => (
+                        <div key={i} className="w-3 h-3 rounded-full bg-white" />
+                      ))}
+                    </div>
+                  </div>
+                  <div className="absolute right-0 top-0 bottom-0 w-6 bg-pink-300 opacity-40">
+                    <div className="absolute inset-0 flex flex-col justify-around items-center py-2">
+                      {[...Array(8)].map((_, i) => (
+                        <div key={i} className="w-3 h-3 rounded-full bg-white" />
+                      ))}
+                    </div>
+                  </div>
 
+                  {/* Cloud decorations - top left */}
+                  <div className="absolute top-4 left-8">
+                    <svg width="40" height="28" viewBox="0 0 40 28" fill="none" className="opacity-60">
+                      <path
+                        d="M10 18C10 18 8 18 8 16C8 14 10 14 10 14C10 14 10 11 13 11C16 11 16 14 16 14C16 14 19 14 19 17C19 20 16 20 16 20H10Z"
+                        fill="white"
+                        stroke="#FFC0CB"
+                        strokeWidth="1.5"
+                      />
+                    </svg>
+                  </div>
+
+                  {/* Cloud decorations - top right */}
+                  <div className="absolute top-6 right-8">
+                    <svg width="35" height="25" viewBox="0 0 35 25" fill="none" className="opacity-60">
+                      <path
+                        d="M8 16C8 16 6 16 6 14C6 12 8 12 8 12C8 12 8 9 11 9C14 9 14 12 14 12C14 12 17 12 17 15C17 18 14 18 14 18H8Z"
+                        fill="white"
+                        stroke="#FFC0CB"
+                        strokeWidth="1.5"
+                      />
+                    </svg>
+                  </div>
+
+                  {/* Decorative bunting flags */}
+                  <div className="absolute top-2 left-12 right-12 flex justify-center gap-1">
+                    {[...Array(5)].map((_, i) => (
+                      <svg key={i} width="20" height="24" viewBox="0 0 20 24" fill="none" className="opacity-50">
+                        <path d="M2 2L10 2L10 18L6 14L2 18L2 2Z" fill="#FFB6C1" stroke="#FF69B4" strokeWidth="1" />
+                      </svg>
+                    ))}
+                  </div>
+
+                  {/* Flower decorations - bottom corners */}
+                  <div className="absolute bottom-3 left-10">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="opacity-50">
+                      <circle cx="12" cy="12" r="3" fill="#FFB6C1" />
+                      <circle cx="12" cy="7" r="3" fill="#FFC0CB" />
+                      <circle cx="17" cy="12" r="3" fill="#FFC0CB" />
+                      <circle cx="12" cy="17" r="3" fill="#FFC0CB" />
+                      <circle cx="7" cy="12" r="3" fill="#FFC0CB" />
+                      <circle cx="12" cy="12" r="2" fill="#FFD700" />
+                    </svg>
+                  </div>
+
+                  <div className="absolute bottom-3 right-10">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" className="opacity-50">
+                      <circle cx="10" cy="10" r="2.5" fill="#FFB6C1" />
+                      <circle cx="10" cy="6" r="2.5" fill="#FFC0CB" />
+                      <circle cx="14" cy="10" r="2.5" fill="#FFC0CB" />
+                      <circle cx="10" cy="14" r="2.5" fill="#FFC0CB" />
+                      <circle cx="6" cy="10" r="2.5" fill="#FFC0CB" />
+                      <circle cx="10" cy="10" r="1.5" fill="#FFD700" />
+                    </svg>
+                  </div>
+
+                  {/* Small decorative hearts */}
+                  <div className="absolute top-12 left-6">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="opacity-40">
+                      <path d="M8 14L2 8C0 6 0 3 2 2C4 1 6 2 8 4C10 2 12 1 14 2C16 3 16 6 14 8L8 14Z" fill="#FF69B4" />
+                    </svg>
+                  </div>
+
+                  <div className="absolute top-16 right-7">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="opacity-40">
+                      <path
+                        d="M7 12L2 7C0.5 5.5 0.5 3 2 2C3.5 1 5 2 7 3.5C9 2 10.5 1 12 2C13.5 3 13.5 5.5 12 7L7 12Z"
+                        fill="#FFB6C1"
+                      />
+                    </svg>
+                  </div>
+
+                  {/* Content area with better spacing */}
                   <div className="space-y-4">
-                    <h2 className="text-2xl font-semibold text-center text-[#8B4513] font-thai">คำอวยพรแด่คุณ</h2>
+                    {/* <h2 className="text-2xl font-semibold text-center text-[#8B4513] font-thai">คำอวยพรแด่คุณ</h2> */}
                     <div className="w-16 h-0.5 bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent mx-auto" />
                     <p className="text-sm leading-relaxed text-[#5C4033] font-thai text-center">
-                      ขอให้ท่านมีความสุข สุขภาพแข็งแรง
+                      สุขสันต์วันเกิดจ้ะ ขอให้มายโชคดี
                       <br />
-                      ประสบความสำเร็จในทุกๆ ด้าน
+                      มีความสุข ร่าเริงแจ่มใส เรียนเก่ง
                       <br />
-                      มีแต่สิ่งดีๆ เข้ามาในชีวิต
-                      <br />
-                      และครอบครัวมีความสุขยิ่งๆ ขึ้นไป
+                      และเป็นที่รักของทุกคนเช่นนี้ตลอดไปจ้ะ
                     </p>
                   </div>
                 </div>

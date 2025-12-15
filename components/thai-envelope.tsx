@@ -465,7 +465,7 @@ export function ThaiEnvelope() {
                             <br />
                             อยู่เป็นร่มโพธิ์ร่มไทรให้ลูกหลานไปนาน ๆ
                             <br />
-                            รักพ่อสุดหัวใจค่ะ
+                            รักคุณพ่อสุดหัวใจค่ะ
                           </p>
                           <p className="text-sm leading-relaxed text-amber-900 font-thai text-right">
                             จาก ลูกสาวสุดที่รัก
